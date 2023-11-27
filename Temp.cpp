@@ -16,6 +16,18 @@ void _print(char t) {cerr << t;}
 void _print(lld t) {cerr << t;}
 void _print(double t) {cerr << t;}
 void _print(ull t) {cerr << t;}
+template <typename T>
+istream &operator>>(istream &in, vector<T> &a) {
+    for (auto &x : a) in >> x;
+    return in;
+};
+template <typename T>
+ostream &operator<<(ostream &out, vector<T> &a) {
+    for (auto &x : a) out << x << ' ';
+    return out;
+};
+
+
 template <class T, class V> void _print(pair <T, V> p);
 template <class T> void _print(vector <T> v);
 template <class T> void _print(set <T> v);
