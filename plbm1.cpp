@@ -37,11 +37,6 @@ void pagol() {
     cin>>n;
    vector<int> v(n);
    in(v);
-   ll sum=0;
-   for(int i=0;i<n;i++){
-    sum+=abs(v[i]);
-   }
-   cout<<sum<<endl;
 
 }
 
