@@ -3,17 +3,14 @@ using namespace std;
 #include <ext/pb_ds/assoc_container.hpp> 
 #include <ext/pb_ds/tree_policy.hpp> 
 using namespace __gnu_pbds; 
-typedef unsigned long long ull;
-typedef long double lld;
-#define ll        long long
-#define debug(x) cerr << #x <<" "; _print(x); cerr << endl;
-void _print(ll t) {cerr << t;}
+#define dbg(x) cerr << #x <<" "; _print(x); cerr << endl;
+void _print(long long t) {cerr << t;}
 void _print(int t) {cerr << t;}
 void _print(string t) {cerr << t;}
 void _print(char t) {cerr << t;}
-void _print(lld t) {cerr << t;}
+void _print(long double t) {cerr << t;}
 void _print(double t) {cerr << t;}
-void _print(ull t) {cerr << t;}
+void _print(unsigned long long t) {cerr << t;}
 template <class T, class V> void _print(pair <T, V> p);
 template <class T> void _print(vector <T> v);
 template <class T> void _print(set <T> v);
