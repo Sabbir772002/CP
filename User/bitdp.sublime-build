@@ -1,0 +1,22 @@
+<snippet>
+    <content><![CDATA[
+int dp[(int)1e5+100];
+int v[(int)1e5+100];
+
+ll find(int i,ll sum,ll n,ll m){
+  if(i==n){
+    return (sum>0 and sum<=m);
+  }
+  ll &ret=dp[i];
+  if(ret!=-1)return dp[i];
+  int ans=0;
+  ans=find(i+1,sum,n,m);
+  ans=max(1+find(i+1,v[i]+sum,n,m),ans);
+  return dp[i]=ans;
+
+}
+]]></content>
+    <tabTrigger>dp</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Create an if statement to check if f == 1 and print YES/NO</description>
+</snippet>

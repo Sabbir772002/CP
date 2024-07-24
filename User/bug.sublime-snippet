@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+#ifdef Sabbir
+#include <E:\CodeBox\TempBox\Debug\dbg.h>
+#else
+#define dbg(x...)
+#endif
+]]></content>
+    <tabTrigger>bg</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Inline Bug</description>
+</snippet>

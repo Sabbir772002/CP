@@ -1,0 +1,12 @@
+{
+    "cmd": ["g++", "$file", "-o", "${file_path}/${file_base_name}"],
+    "selector": "source.cpp",
+    "variants":
+    [
+        {
+            "name": "Run",
+            "cmd": ["${file_path}/${file_base_name}", "<", "input.txt", ">", "output.txt"],
+            "shell": true
+        }
+    ]
+}

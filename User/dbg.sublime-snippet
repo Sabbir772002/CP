@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+#ifdef Sabbir
+#include <E:\CodeBox\TempBox\Debug\debug.h>
+#else
+#define dbg(x...)
+#endif
+]]></content>
+    <tabTrigger>bug</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Create an if statement to check if f == 1 and print YES/NO</description>
+</snippet>

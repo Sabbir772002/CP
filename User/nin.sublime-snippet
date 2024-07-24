@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+int n;
+cin>>n;
+vector<int> v;
+for(int i=0;i<n;i++){
+	int xx;
+	cin>>xx;
+	v.push_back(xx);
+}
+]]></content>
+    <tabTrigger>nin</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Create an if statement to check if f == 1 and print YES/NO</description>
+</snippet>

@@ -1,0 +1,11 @@
+{
+    "cmd": ["g++", "-Wall", "-o", "${file_base_name}", "${file}"],
+    "selector": "source.cpp",
+    "working_dir": "${file_path}",
+    "variants": [
+        {
+            "name": "Build and Run",
+            "shell_cmd": "cmd /c \"g++ -D Sabbir -Wall -o ${file_base_name} ${file} && ${file_base_name}.exe < ${file_path}\\input.txt > ${file_path}\\output.txt\""
+        }
+    ]
+}

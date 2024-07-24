@@ -58,7 +58,6 @@ void add(int idx) {
     for (++idx; idx < n; idx += idx & -idx)
         bit[idx] +=1;
 }
-
 void range(int l, int r, int val) {
     // add(l, val);
     // add(r + 1, -val);

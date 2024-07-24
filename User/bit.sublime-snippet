@@ -1,0 +1,26 @@
+<snippet>
+    <content><![CDATA[
+int bit[3*(int)3e5+8]={0};
+int n;
+void add(int idx) {
+    for (++idx; idx < n; idx += idx & -idx)
+        bit[idx] +=1;
+}
+void range(int l, int r, int val) {
+    // add(l, val);
+    // add(r + 1, -val);
+}
+
+int point(int idx) {
+    int ret = 0;
+    for (++idx; idx > 0; idx -= idx & -idx)
+        ret += bit[idx];
+    return ret;
+}
+
+
+]]></content>
+    <tabTrigger>bit</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Create an if statement to check if f == 1 and print YES/NO</description>
+</snippet>

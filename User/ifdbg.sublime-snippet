@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+#ifdef Sabbir
+    freopen("Error.txt", "w", stderr);
+#endif]]></content>
+    <tabTrigger>ifdbg</tabTrigger>
+    <scope>source.c++</scope>
+    <description>print YES</description>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+for(int i=n-1;i>=0;i--){
+    ${1:}
+}]]></content>
+    <tabTrigger>bfor</tabTrigger>
+    <scope>source.c++</scope>
+    <description>print YES</description>
+</snippet>

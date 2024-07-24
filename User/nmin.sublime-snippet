@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+int n,m;
+cin>>n>>m;
+vector<int> v;
+for(int i=0;i<n;i++){
+	int xx;
+	cin>>xx;
+	v.push_back(xx);
+}
+]]></content>
+    <tabTrigger>nmin</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Two variable Input</description>
+</snippet>

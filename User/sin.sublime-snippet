@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+int n;
+cin>>n;
+string s;
+cin>>s;
+int ans=0;
+for(int i=0;i<n;i++){
+    if(s[i]-'0'==1){
+       ans++;
+    }
+}
+]]></content>
+    <tabTrigger>sin</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Create an if statement to check if f == 1 and print YES/NO</description>
+</snippet>

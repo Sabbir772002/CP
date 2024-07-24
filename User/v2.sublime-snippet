@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+
+vector<int> vv(n);
+for(int i=0;i<n;i++){
+	cin>>vv[i];
+}
+]]></content>
+    <tabTrigger>aa</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Create an if statement to check if f == 1 and print YES/NO</description>
+</snippet>

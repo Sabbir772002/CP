@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+cout<<"YES"<<"\n";
+]]></content>
+    <tabTrigger>yes</tabTrigger>
+    <scope>source.c++</scope>
+    <description>print YES</description>
+</snippet>

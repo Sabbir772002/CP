@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+vector<int> lis(const vector<int> &a)
+{
+    vector<int> L(a.size());
+    vector<int> Lis(a.size());
+    int lisCount = 0;
+    for (int i = 0; i < a.size(); ++i)
+    {
+        int pos = lower_bound(L.begin(), L.begin() + lisCount, a[i])
+                     - L.begin();
+        L[pos] = a[i];
+        if (pos == lisCount)
+            ++lisCount;
+        Lis[i] = pos + 1;
+    }
+    // for(int i=0;i<a.size();i++){
+    //     cout<<Lis[i]<<" ";
+    // }
+    return Lis;
+}]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>lis_bin</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

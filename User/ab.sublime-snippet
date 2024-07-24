@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+vector<int> b(n);
+for(int i=0;i<n;i++){
+	cin>>b[i];
+}
+]]></content>
+    <tabTrigger>ab</tabTrigger>
+    <scope>source.c++</scope>
+    <description></description>
+</snippet>

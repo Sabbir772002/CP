@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+int mxv=*max_element(all(${1:v}));
+]]></content>
+    <tabTrigger>mxv</tabTrigger>
+    <scope>source.c++</scope>
+    <description>print YES</description>
+</snippet>

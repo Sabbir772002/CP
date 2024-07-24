@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+const ll inf=1e9;
+]]></content>
+    <tabTrigger>inf</tabTrigger>
+    <scope>source.c++</scope>
+    <description>infinity</description>
+</snippet>

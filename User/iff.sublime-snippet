@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+if (${1:f} == 1) {
+    cout << "YES" << endl;
+} else {
+    cout << "NO" << endl;
+}
+]]></content>
+    <tabTrigger>iff</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Create an if statement to check if f == 1 and print YES/NO</description>
+</snippet>

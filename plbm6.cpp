@@ -1,81 +1,65 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
-typedef unsigned long long ull;
-typedef long double lld;
-#define ll        long long
-#define int       long long
-#ifndef ONLINE_JUDGE
-#define debug(x) cerr << #x <<" "; _print(x); cerr << endl;
-#else
-#define debug(x)
-#endif
-//void _print(ll t) {cerr << t;}
-// void _print(int t) {cerr << t;}
-// void _print(string t) {cerr << t;}
-// void _print(char t) {cerr << t;}
-// void _print(lld t) {cerr << t;}
-// void _print(double t) {cerr << t;}
-// void _print(ull t) {cerr << t;}
-// template <class T, class V> void _print(pair <T, V> p);
-// template <class T> void _print(vector <T> v);
-// template <class T> void _print(set <T> v);
-// template <class T, class V> void _print(map <T, V> v);
-// template <class T> void _print(multiset <T> v);
-// template <class T, class V> void _print(pair <T, V> p) {cerr << "{"; _print(p.ff); cerr << ","; _print(p.ss); cerr << "}";}
-// template <class T> void _print(vector <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
-// template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
-// template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
-// template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
-#define endl               "\n"
-#define fast               ios::sync_with_stdio(0);cin.tie(0);
-#define fr(i, n)           for (ll i=0;i<n;i++)
-#define fr1(i, n)          for(ll i=1;i<=n;i++)
-#define tc                 int t; cin >> t;   while(t--)
-#define pb                 push_back
-#define fs(n)              fixed<<setprecision(n)
-#define asort(a)           sort(a,a+n)
-#define vi                 vector<int>
-#define s                  second
-#define f                  first
-#define vl                 vector<long long int>
-#define vc                 vector<char>
-#define po                 pop_back
-#define allr(x)            ((x).rbegin(), (x).rend())
-#define all(x)             (x).begin(), (x).end()
-#define in(v)               for(auto &b:v)cin>>b;
-#define dsort(a)           sort(a,a+n,greater<int>())
-#define tolower(s)         transform(s.begin(), s.end(), s.begin(), ::tolower)
-#define c(v)              cout<<v<<endl;
-#define yes                cout<<"Yes"<<endl;
-#define in(v)               for(auto &b:v)cin>>b;
-#define no                cout<<"No"<<endl;
-#define mod                1000000007
-#define inf               (long long)7e8+7
-const int mx=4e5+5;
+pair<string, int> lexicographically_smallest_path(vector<string>& grid) {
+    int n = grid[0].size();
+    vector<vector<int>> dp(2, vector<int>(n + 1, 0));
 
-void solve() {
-    int n;
-    cin>>n;
+    // Base case
+    dp[0][0] =(grid[0][0]=='1'?1:0);
+     dp[1][0] = (grid[1][0]=='1'?1:0);
 
+    // Fill the DP table
+    for (int j = 1; j <= n; ++j) {
+        dp[0][j] = min(dp[0][j - 1], dp[1][j - 1] + (grid[0][j - 1] - '0'));
+        dp[1][j] = min(dp[1][j - 1], dp[0][j - 1] + (grid[1][j - 1] - '0'));
+    }
+
+    // Reconstruct the path
+    string path;
+    int i = (dp[0][n] <= dp[1][n]) ? 0 : 1;
+    int j = n;
+    while (j > 0) {
+        path += (i == 0) ? '0' : '1';
+        if (i == 0)
+            i = (dp[0][j] <= dp[1][j] + (grid[0][j - 1] - '0')) ? 0 : 1;
+        else
+            i = (dp[1][j] <= dp[0][j] + (grid[1][j - 1] - '0')) ? 1 : 0;
+        --j;
+    }
+    reverse(path.begin(), path.end());
+
+    // Count the number of paths yielding the lexicographically smallest string
+    int count = 0;
+    for (int j = 0; j <= n; ++j) {
+        if (dp[0][j] == dp[0][n] || dp[1][j] == dp[1][n])
+            ++count;
+    }
+
+    return {path, count};
 }
 
-int32_t main() {
-    #ifndef ONLINE_JUDGE
-
-       freopen("input.txt", "r", stdin);
-       freopen("outbox.txt", "w", stdout);
-       freopen("Error.txt", "w", stderr);
-
+int main() {
+      #ifndef ONLINE_JUDGE
+       freopen("IO/input.txt", "r", stdin);
+       freopen("IO/outbox.txt", "w", stdout);
+       freopen("IO/Error.txt", "w", stderr);
  #endif
-    int t = 1;
-
-fast;
-   cin >> t;
-    int c = 1;
+    int t;
+        cin >> t;
     while (t--) {
-        // cout << "Case " << c++ << ": ";
-        solve();
+        int n;
+        cin >> n;
+        vector<string> grid(2);
+        for (int i = 0; i < 2; ++i)
+            cin >> grid[i];
+        
+        auto result = lexicographically_smallest_path(grid);
+        cout << result.first << endl;
+        cout << result.second << endl;
     }
     return 0;
 }
