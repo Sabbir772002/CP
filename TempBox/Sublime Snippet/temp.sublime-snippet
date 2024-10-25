@@ -1,31 +1,42 @@
 <snippet>
 	<content><![CDATA[
-#include <bits/stdc++.h> 
-using namespace std; 
-#define ll            long long
+#include<bits/stdc++.h>
+#ifdef Sabbir
+#pragma GCC diagnostic ignored "-Wunused-variable"
+#pragma GCC diagnostic ignored "-Wsign-compare"
+#endif
+using namespace std;
+#ifdef Sabbir
+#include <E:\CodeBox\TempBox\Debug\debug.h>
+#else
+#define dbg(x...)
+#endif
+#define ll                 long long
 #define all(x)             (x).begin(), (x).end()
 #define in(v)               for(auto &b:v)cin>>b;
 #define pb                  push_back
 #define inf               (long long)1e8+7
-
 const int mx=4e5+5;
-void pagol() {
-  int n,x;
-  cin>>n>>x;
 
+void pagol(){
+ 
+ 
 }
 
 int32_t main() {
-   
   ios::sync_with_stdio(0);cin.tie(0);
+  #ifdef Sabbir
+      freopen("Error.txt", "w", stderr);
+  #endif
     int t = 1;
-  cin >> t;
-    
+    cin>>t;
     while (t--) {
+
         pagol();
     }
     return 0;
 }
+//যদ্দপী, আমি তাহাতেই মুগ্ধ হইয়া গিয়াছি
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>temp</tabTrigger>

@@ -2,7 +2,8 @@
 	"bootstrapped": true,
 	"installed_packages":
 	[
-		"Package Control"
+		"CppFastOlympicCoding",
+		"Package Control",
 	],
 	"in_process_packages":
 	[

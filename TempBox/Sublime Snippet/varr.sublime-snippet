@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+
+vector<array<int,3>> va;
+
+]]></content>
+    <tabTrigger>varr</tabTrigger>
+    <scope>source.c++</scope>
+    <description></description>
+</snippet>
